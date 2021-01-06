@@ -32,6 +32,8 @@ public class playerMovement : MonoBehaviour
 
                 StartCoroutine(Move(targetPosition));
             }
+
+       
         }
 
         animator.SetBool("isMoving", isMoving);
@@ -50,4 +52,6 @@ public class playerMovement : MonoBehaviour
 
         isMoving = false;
     }
+
+    
 }
