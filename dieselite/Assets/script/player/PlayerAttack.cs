@@ -8,7 +8,6 @@ public class PlayerAttack : MonoBehaviour
     public Animator animator;
 
 
-
     // Update is called once per frame
     void Update()
     {
