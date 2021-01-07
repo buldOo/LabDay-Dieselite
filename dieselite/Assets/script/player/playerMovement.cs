@@ -9,12 +9,16 @@ public class playerMovement : MonoBehaviour
     private Vector2 input;
     public LayerMask SolidObjectsLayer;
     public LayerMask InteracteblaLayer;
+    public AudioClip runningSounds;
 
     private Animator animator;
+    private AudioSource Audio_running;
+
 
     private void Awake()
     { 
         animator = GetComponent<Animator>();
+        Audio_running = GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -35,6 +39,7 @@ public class playerMovement : MonoBehaviour
                 if (IsWalkable(targetPosition))
                 {
                     StartCoroutine(Move(targetPosition));
+                    Audio_running.PlayOneShot(runningSounds);
                 }
 
             }
@@ -55,7 +60,6 @@ public class playerMovement : MonoBehaviour
             yield return null;
         }
         transform.position = targetPosition;
-
         isMoving = false;
     }
 
