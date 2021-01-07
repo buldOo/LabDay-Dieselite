@@ -7,8 +7,6 @@ public class playerMovement : MonoBehaviour
     public float moveSpeed;
     private bool isMoving;
     private Vector2 input;
-    public LayerMask SolidObjectsLayer;
-    public LayerMask InteracteblaLayer;
 
     private Animator animator;
 
@@ -32,11 +30,7 @@ public class playerMovement : MonoBehaviour
                 targetPosition.x += input.x;
                 targetPosition.y += input.y;
 
-                if (IsWalkable(targetPosition))
-                {
-                    StartCoroutine(Move(targetPosition));
-                }
-
+                StartCoroutine(Move(targetPosition));
             }
 
        
@@ -59,14 +53,5 @@ public class playerMovement : MonoBehaviour
         isMoving = false;
     }
 
-    private bool IsWalkable(Vector3 targetPos)
-    {
-        if (Physics2D.OverlapCircle(targetPos, 0.3f, SolidObjectsLayer | InteracteblaLayer) != null)
-        {
-            return false;
-        }
-
-        return true;
-    }
-
+    
 }
