@@ -34,9 +34,6 @@ public class playerMovement : MonoBehaviour
 
             if (input != Vector2.zero)
             {
-                animator.SetFloat("moveX", input.x);
-                animator.SetFloat("moveY", input.y);
-
                 var targetPosition = transform.position;
                 targetPosition.x += input.x;
                 targetPosition.y += input.y;
