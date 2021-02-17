@@ -10,7 +10,6 @@ public class playerMovement : MonoBehaviour
     public LayerMask SolidObjectsLayer;
     public LayerMask InteracteblaLayer;
     public AudioClip runningSounds;
-
     private Animator animator;
     private AudioSource Audio_running;
 

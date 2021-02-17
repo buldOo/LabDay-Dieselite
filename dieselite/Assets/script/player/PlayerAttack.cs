@@ -5,29 +5,28 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     public AudioClip attackSounds;
-    public Animator animator;
     private AudioSource Audio_attack;
+    Animator m_Animator;
 
-    // Awake is used to set variable before the game start
     private void Awake()
     {
         Audio_attack = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+        //Get the Animator, which you attach to the GameObject you intend to animate.
+        m_Animator = gameObject.GetComponent<Animator>();
+    }
+
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) 
+        //Press the space bar to tell the Animator to trigger the Jump Animation
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Attack();
+            m_Animator.SetTrigger("Attack");
             Audio_attack.PlayOneShot(attackSounds);
         }
     }
-
-    void Attack() 
-    {
-        // play attack animation
-        animator.SetTrigger("Attack");
-    }
-
 }
