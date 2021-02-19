@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -20,6 +21,11 @@ public class PlayerHealth : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.H))
         {
             TakeDamage(20);
+        }
+
+        if (currentHealth == 0)
+        {
+           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
