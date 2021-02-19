@@ -15,12 +15,18 @@ public class ScriptEnnemy : MonoBehaviour
     public Transform ShootPoint;
     public float FireRate;
     float ReadyForNextShot;
+    public int maxHealth = 100;
+    public int currentHealth;
+
+
 
 
     void Start(){
         rb = this.GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        currentHealth = maxHealth;
     }
+
     
     void Update(){
         Vector3 direction = player.position - transform.position;
@@ -45,6 +51,12 @@ public class ScriptEnnemy : MonoBehaviour
             Destroy(BulletIns, 0.3f);
             }
         }
+
+        if (currentHealth <= 0)
+        {
+            Debug.Log("je suis mort");
+            Destroy(gameObject);
+        }
     }
 
     private void OnDrawGizmosSelected(){
@@ -52,5 +64,21 @@ public class ScriptEnnemy : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, lineOfSite);
         Gizmos.DrawWireSphere(transform.position, shootingRange);
 
+    }
+
+    void TakeDamage(int Damage)
+    {
+        currentHealth -= Damage;
+        Debug.Log(currentHealth);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag.Equals("playerBullet"))
+        {
+            Debug.Log("je suis touché");
+            Destroy(collision.gameObject);
+            TakeDamage(34);
+        }
     }
 }

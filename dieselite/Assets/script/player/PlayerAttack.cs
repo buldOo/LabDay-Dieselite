@@ -7,6 +7,11 @@ public class PlayerAttack : MonoBehaviour
     public AudioClip attackSounds;
     private AudioSource Audio_attack;
     Animator m_Animator;
+    public GameObject Bullet;
+    public float BulletSpeed;
+    public Transform ShootPoint;
+    public float FireRate;
+    float ReadyForNextShot;
 
     private void Awake()
     {
@@ -25,8 +30,18 @@ public class PlayerAttack : MonoBehaviour
         //Press the space bar to tell the Animator to trigger the Jump Animation
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            m_Animator.SetTrigger("Attack");
-            Audio_attack.PlayOneShot(attackSounds);
+            if (Time.time > ReadyForNextShot)
+            {
+
+                ReadyForNextShot = Time.time + 1 / FireRate;
+
+                //GameObject FlashShoot2 = Instantiate(Flash2,ShootPoint.position, ShootPoint.rotation);
+                //Destroy(FlashShoot2, 0.5f);
+
+                GameObject BulletIns = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
+                BulletIns.GetComponent<Rigidbody2D>().AddForce(BulletIns.transform.up * BulletSpeed);
+                Destroy(BulletIns, 0.3f);
+            }
         }
     }
 }
