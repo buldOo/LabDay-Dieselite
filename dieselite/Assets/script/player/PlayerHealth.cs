@@ -17,15 +17,19 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            TakeDamage(20);
-        }
+        
     }
 
     void TakeDamage(int Damage)
     {
         currentHealth -= Damage;
         healthBar.SetHealth(currentHealth);
+    }
+
+    void OnCollisionEnter2D (Collision2D collision){
+        if (collision.gameObject.tag.Equals("Bullet")){
+            Destroy(collision.gameObject); 
+            TakeDamage(10);
+        }
     }
 }
