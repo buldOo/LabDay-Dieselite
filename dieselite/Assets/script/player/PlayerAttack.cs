@@ -1,35 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
     public AudioClip attackSounds;
-    private AudioSource Audio_attack;
-    Animator m_Animator;
     public GameObject Bullet;
-    public float BulletSpeed;
     public Transform ShootPoint;
+    public float BulletSpeed;
     public float FireRate;
+
+    private AudioSource Audio_attack;
+    private Animator animator;
+    private bool isAttacking;
+
     float ReadyForNextShot;
 
     private void Awake()
     {
         Audio_attack = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
     }
 
     void Start()
     {
         //Get the Animator, which you attach to the GameObject you intend to animate.
-        m_Animator = gameObject.GetComponent<Animator>();
+        animator = gameObject.GetComponent<Animator>();
     }
 
 
     void Update()
     {
-        //Press the space bar to tell the Animator to trigger the Jump Animation
+        animator.SetBool("isAttacking", isAttacking);
+
+        //Press the left click to tell the Animator to trigger the Jump Animation
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            isAttacking = true;
+            Debug.Log("attack true");
+
             if (Time.time > ReadyForNextShot)
             {
 
@@ -42,6 +52,10 @@ public class PlayerAttack : MonoBehaviour
                 BulletIns.GetComponent<Rigidbody2D>().AddForce(BulletIns.transform.up * BulletSpeed);
                 Destroy(BulletIns, 0.3f);
             }
+
+            isAttacking = false;
+            Debug.Log("attack false");
         }
+        
     }
 }

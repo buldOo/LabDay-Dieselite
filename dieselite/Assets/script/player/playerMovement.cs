@@ -5,19 +5,21 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour
 {
     public float moveSpeed;
-    private bool isMoving;
-    private Vector2 input;
-    public GameObject crosshairs;
+    public GameObject crosshair;
     public LayerMask SolidObjectsLayer;
     public LayerMask InteracteblaLayer;
     public AudioClip runningSounds;
+
+    private bool isMoving;
+    private Vector2 input;
     private Animator animator;
     private AudioSource Audio_running;
-
     private Camera theCam;
 
     private void Start()
     {
+        Debug.Log("start");
+        Cursor.visible = false;
         theCam = Camera.main;
     }
 
@@ -26,6 +28,7 @@ public class playerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         Audio_running = GetComponent<AudioSource>();
     }
+
     private void Update()
     {
         if(!isMoving)
@@ -88,8 +91,7 @@ public class playerMovement : MonoBehaviour
             mousePosition.y - transform.position.y
         );
 
-        crosshairs.transform.position = mousePosition;
-
         transform.up = direction;
+        crosshair.transform.position = new Vector2(mousePosition.x, mousePosition.y);
     }
 }
