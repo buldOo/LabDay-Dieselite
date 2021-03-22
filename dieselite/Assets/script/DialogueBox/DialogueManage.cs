@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class DialogueManage : MonoBehaviour
 {
+     public GameObject player;
     public Animator animator;
     public Text nameText;
     public Text dialogueText;
@@ -26,6 +27,9 @@ public class DialogueManage : MonoBehaviour
 
     public void startDialogue(Dialogue dialogue){
 
+        player.GetComponent<playerMovement>().enabled = false;
+        player.GetComponent<PlayerAttack>().enabled = false;
+        player.GetComponent<Animator>().enabled = false;
         animator.SetBool("IsOpen", true);
         nameText.text = dialogue.name;
 
@@ -61,5 +65,8 @@ public class DialogueManage : MonoBehaviour
 
     void EndDialogue(){
         animator.SetBool("IsOpen", false);
+        player.GetComponent<playerMovement>().enabled = true;
+        player.GetComponent<PlayerAttack>().enabled = true;
+        player.GetComponent<Animator>().enabled = true;
     }
 }
