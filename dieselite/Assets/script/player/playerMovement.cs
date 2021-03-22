@@ -7,6 +7,7 @@ public class playerMovement : MonoBehaviour
     public float moveSpeed;
     private bool isMoving;
     private Vector2 input;
+    public GameObject crosshairs;
     public LayerMask SolidObjectsLayer;
     public LayerMask InteracteblaLayer;
     public AudioClip runningSounds;
@@ -85,7 +86,10 @@ public class playerMovement : MonoBehaviour
         Vector2 direction = new Vector2(
             mousePosition.x - transform.position.x,
             mousePosition.y - transform.position.y
-            );
+        );
+
+        crosshairs.transform.position = mousePosition;
+
         transform.up = direction;
     }
 }
