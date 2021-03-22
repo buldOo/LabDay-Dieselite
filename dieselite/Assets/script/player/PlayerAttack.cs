@@ -51,11 +51,10 @@ public class PlayerAttack : MonoBehaviour
                 GameObject BulletIns = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
                 BulletIns.GetComponent<Rigidbody2D>().AddForce(BulletIns.transform.up * BulletSpeed);
                 Destroy(BulletIns, 0.3f);
-            }
-
-            isAttacking = false;
-            Debug.Log("attack false");
+            }         
         }
-        
+
     }
+
+    
 }

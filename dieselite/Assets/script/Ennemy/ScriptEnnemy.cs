@@ -18,6 +18,9 @@ public class ScriptEnnemy : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
 
+    private Animator animator;
+    private bool isDead;
+
 
 
 
@@ -27,17 +30,27 @@ public class ScriptEnnemy : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
+
     void Update(){
+
         Vector3 direction = player.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         rb.rotation = angle;
         direction.Normalize();
 
+        animator.SetBool("isDead", isDead);
+
         float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
+
         if (distanceFromPlayer < lineOfSite && distanceFromPlayer > shootingRange){
             transform.position = Vector2.MoveTowards(this.transform.position, player.position, speed * Time.deltaTime);
         }
+
         else if (distanceFromPlayer <= shootingRange){
             if (Time.time > ReadyForNextShot){
                 
@@ -55,7 +68,8 @@ public class ScriptEnnemy : MonoBehaviour
         if (currentHealth <= 0)
         {
             Debug.Log("je suis mort");
-            Destroy(gameObject);
+            isDead = true;
+            GetComponent <ScriptEnnemy> ().enabled = false;
         }
     }
 
