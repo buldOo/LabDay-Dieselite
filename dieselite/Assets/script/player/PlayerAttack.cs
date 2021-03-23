@@ -12,6 +12,7 @@ public class PlayerAttack : MonoBehaviour
     public float FireRate;
 
     private AudioSource Audio_attack;
+
     private Animator animator;
     private bool isAttacking;
 

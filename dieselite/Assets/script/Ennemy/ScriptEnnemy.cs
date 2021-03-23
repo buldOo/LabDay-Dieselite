@@ -15,24 +15,15 @@ public class ScriptEnnemy : MonoBehaviour
     public Transform ShootPoint;
     public float FireRate;
     float ReadyForNextShot;
-    public int maxHealth = 100;
-    public int currentHealth;
-
-    private Animator animator;
-    private bool isDead;
-
-
-
 
     void Start(){
         rb = this.GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        currentHealth = maxHealth;
     }
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
+
     }
 
 
@@ -41,9 +32,7 @@ public class ScriptEnnemy : MonoBehaviour
         Vector3 direction = player.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         rb.rotation = angle;
-        direction.Normalize();
-
-        animator.SetBool("isDead", isDead);
+        direction.Normalize();    
 
         float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
 
@@ -52,24 +41,21 @@ public class ScriptEnnemy : MonoBehaviour
         }
 
         else if (distanceFromPlayer <= shootingRange){
+
             if (Time.time > ReadyForNextShot){
                 
             ReadyForNextShot = Time.time + 1 / FireRate;
 
             //GameObject FlashShoot2 = Instantiate(Flash2,ShootPoint.position, ShootPoint.rotation);
-                //Destroy(FlashShoot2, 0.5f);
+            //Destroy(FlashShoot2, 0.5f);
                 
             GameObject BulletIns = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
             BulletIns.GetComponent<Rigidbody2D>().AddForce(BulletIns.transform.up * BulletSpeed);
             Destroy(BulletIns, 0.3f);
+
             }
         }
 
-        if (currentHealth <= 0)
-        {
-            Debug.Log("je suis mort");
-            Destroy(gameObject);
-        }
     }
 
     private void OnDrawGizmosSelected(){
@@ -77,21 +63,5 @@ public class ScriptEnnemy : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, lineOfSite);
         Gizmos.DrawWireSphere(transform.position, shootingRange);
 
-    }
-
-    void TakeDamage(int Damage)
-    {
-        currentHealth -= Damage;
-        Debug.Log(currentHealth);
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag.Equals("playerBullet"))
-        {
-            Debug.Log("je suis touché");
-            Destroy(collision.gameObject);
-            TakeDamage(34);
-        }
     }
 }
