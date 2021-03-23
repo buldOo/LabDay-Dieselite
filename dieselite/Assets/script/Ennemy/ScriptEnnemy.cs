@@ -68,8 +68,7 @@ public class ScriptEnnemy : MonoBehaviour
         if (currentHealth <= 0)
         {
             Debug.Log("je suis mort");
-            isDead = true;
-            GetComponent <ScriptEnnemy> ().enabled = false;
+            Destroy(gameObject);
         }
     }
 

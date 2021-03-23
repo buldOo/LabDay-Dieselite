@@ -37,24 +37,31 @@ public class PlayerAttack : MonoBehaviour
         //Press the left click to tell the Animator to trigger the Jump Animation
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            isAttacking = true;
-            Debug.Log("attack true");
-
-            if (Time.time > ReadyForNextShot)
-            {
-
-                ReadyForNextShot = Time.time + 1 / FireRate;
-
-                //GameObject FlashShoot2 = Instantiate(Flash2,ShootPoint.position, ShootPoint.rotation);
-                //Destroy(FlashShoot2, 0.5f);
-
-                GameObject BulletIns = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
-                BulletIns.GetComponent<Rigidbody2D>().AddForce(BulletIns.transform.up * BulletSpeed);
-                Destroy(BulletIns, 0.3f);
-            }         
+            StartCoroutine(ExampleCoroutine());
         }
 
     }
 
-    
+    IEnumerator ExampleCoroutine()
+    {
+        isAttacking = true;
+        yield return new WaitForSeconds(0.3F);
+
+        if (Time.time > ReadyForNextShot)
+        {
+
+            ReadyForNextShot = Time.time + 1 / FireRate;
+
+            //GameObject FlashShoot2 = Instantiate(Flash2,ShootPoint.position, ShootPoint.rotation);
+            //Destroy(FlashShoot2, 0.5f);
+
+            GameObject BulletIns = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
+            BulletIns.GetComponent<Rigidbody2D>().AddForce(BulletIns.transform.up * BulletSpeed);
+            Destroy(BulletIns, 0.3f);
+        }
+
+        isAttacking = false;
+    }
+
+
 }
