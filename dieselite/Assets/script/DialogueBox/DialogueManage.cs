@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class DialogueManage : MonoBehaviour
 {
-     public GameObject player;
+    public GameObject PNJEnDanger;
+    public GameObject player;
     public Animator animator;
     public Text nameText;
     public Text dialogueText;
@@ -59,7 +60,7 @@ public class DialogueManage : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.04f);
         }
     }
 
