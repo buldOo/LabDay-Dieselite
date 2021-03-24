@@ -55,6 +55,9 @@ TagManager:
   - name: player
     uniqueID: 3559106459
     locked: 0
+  - name: rooftop
+    uniqueID: 592408279
+    locked: 0
   - name: HUD
     uniqueID: 1169208803
     locked: 0

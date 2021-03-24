@@ -57968,9 +57968,6 @@ MonoBehaviour:
   InteracteblaLayer:
     serializedVersion: 2
     m_Bits: 128
-  rooftop:
-    serializedVersion: 2
-    m_Bits: 256
   runningSounds: {fileID: 8300000, guid: 67d44b8abf27408418e865d484b9be38, type: 3}
 --- !u!95 &980904419
 Animator:
@@ -58312,7 +58309,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1169208803
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 6039668735242826361, guid: f44ed641e4af82048977df55fa3c0ca3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -58773,7 +58770,7 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1169208803
+  m_SortingLayerID: 592408279
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
