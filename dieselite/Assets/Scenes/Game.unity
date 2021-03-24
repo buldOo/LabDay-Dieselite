@@ -5282,7 +5282,7 @@ GameObject:
   - component: {fileID: 108833791}
   - component: {fileID: 108833790}
   - component: {fileID: 108833792}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: PNJ Naked
   m_TagString: PNJ Naked
   m_Icon: {fileID: 0}
@@ -5887,6 +5887,7 @@ GameObject:
   m_Component:
   - component: {fileID: 597147968}
   - component: {fileID: 597147971}
+  - component: {fileID: 597147969}
   m_Layer: 7
   m_Name: NPC_test_2
   m_TagString: Untagged
@@ -5908,6 +5909,32 @@ Transform:
   m_Father: {fileID: 108833789}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &597147969
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597147967}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.38}
+  m_EdgeRadius: 0
 --- !u!212 &597147971
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -58170,6 +58197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 997366957}
   - component: {fileID: 997366958}
+  - component: {fileID: 997366959}
   m_Layer: 7
   m_Name: character_2
   m_TagString: Untagged
@@ -58242,6 +58270,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &997366959
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997366956}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.38}
+  m_EdgeRadius: 0
 --- !u!1 &1033997635
 GameObject:
   m_ObjectHideFlags: 0
@@ -61571,7 +61625,7 @@ GameObject:
   - component: {fileID: 2013900561}
   - component: {fileID: 2013900565}
   - component: {fileID: 2013900564}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: PNJ En Danger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61738,7 +61792,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0012512207, y: -162.69751}
+  m_AnchoredPosition: {x: 0.0012207031, y: -162.69751}
   m_SizeDelta: {x: -90.00249, y: -374.605}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2126762857
