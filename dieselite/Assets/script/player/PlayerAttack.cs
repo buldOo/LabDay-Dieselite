@@ -15,6 +15,7 @@ public class PlayerAttack : MonoBehaviour
 
     private Animator animator;
     private bool isAttacking;
+    public float timeBeforeDestroy;
 
     float ReadyForNextShot;
 
@@ -58,7 +59,7 @@ public class PlayerAttack : MonoBehaviour
 
             GameObject BulletIns = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
             BulletIns.GetComponent<Rigidbody2D>().AddForce(BulletIns.transform.up * BulletSpeed);
-            Destroy(BulletIns, 0.3f);
+            Destroy(BulletIns, timeBeforeDestroy);
         }
 
         isAttacking = false;

@@ -58003,8 +58003,9 @@ MonoBehaviour:
   attackSounds: {fileID: 8300000, guid: 5f35c536d453564409e653f637934706, type: 3}
   Bullet: {fileID: 6570350931964885745, guid: 76910c1ee43974813bde3bf231d1ae99, type: 3}
   ShootPoint: {fileID: 1545732410}
-  BulletSpeed: 750
+  BulletSpeed: 600
   FireRate: 2
+  timeBeforeDestroy: 1
 --- !u!82 &980904421
 AudioSource:
   m_ObjectHideFlags: 0
