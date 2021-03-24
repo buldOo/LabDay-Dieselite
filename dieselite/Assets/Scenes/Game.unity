@@ -5480,13 +5480,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 420227329}
-  m_LocalRotation: {x: -0.0071065254, y: 0.008597954, z: -0.7051027, w: 0.70901746}
-  m_LocalPosition: {x: 1.294, y: -0.653, z: 0}
+  m_LocalRotation: {x: -0.0071490426, y: 0.008562635, z: -0.70158064, w: 0.7125027}
+  m_LocalPosition: {x: 1.58, y: -0.67, z: -0.004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 768024679}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0.117, y: 1.273, z: -89.681}
+  m_LocalEulerAnglesHint: {x: 0.105, y: 1.274, z: -89.114}
 --- !u!1 &430777810
 GameObject:
   m_ObjectHideFlags: 0
@@ -57379,7 +57379,7 @@ MonoBehaviour:
   lineOfSite: 9.77
   shootingRange: 5.8
   speed: 2.5
-  Bullet: {fileID: 7976733519597442688, guid: b159053cabf1143b696d6c7f123bc67c, type: 3}
+  Bullet: {fileID: 394182463129986239, guid: ac6de71816aed48f8b107e75ba36026a, type: 3}
   BulletSpeed: 1000
   ShootPoint: {fileID: 420227330}
   FireRate: 1
@@ -58001,9 +58001,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackSounds: {fileID: 8300000, guid: 5f35c536d453564409e653f637934706, type: 3}
-  Bullet: {fileID: 1488410535959446097, guid: e9a63f0fd57a0418abe8e1a6c5cfcf55, type: 3}
+  Bullet: {fileID: 6570350931964885745, guid: 76910c1ee43974813bde3bf231d1ae99, type: 3}
   ShootPoint: {fileID: 1545732410}
-  BulletSpeed: 500
+  BulletSpeed: 750
   FireRate: 2
 --- !u!82 &980904421
 AudioSource:
@@ -58511,13 +58511,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163464098}
-  m_LocalRotation: {x: -0, y: -0, z: -0.6987267, w: 0.7153887}
-  m_LocalPosition: {x: 0.8, y: 0.06, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7090296, w: 0.70517874}
+  m_LocalPosition: {x: 0.944, y: 0.086, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1558444938}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -88.65}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.312}
 --- !u!1 &1175948677
 GameObject:
   m_ObjectHideFlags: 0
@@ -61307,7 +61307,7 @@ MonoBehaviour:
   lineOfSite: 9.77
   shootingRange: 5.8
   speed: 2.5
-  Bullet: {fileID: 7976733519597442688, guid: b159053cabf1143b696d6c7f123bc67c, type: 3}
+  Bullet: {fileID: 394182463129986239, guid: ac6de71816aed48f8b107e75ba36026a, type: 3}
   BulletSpeed: 1000
   ShootPoint: {fileID: 1163464099}
   FireRate: 1
