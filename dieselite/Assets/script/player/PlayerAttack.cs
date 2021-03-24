@@ -43,6 +43,7 @@ public class PlayerAttack : MonoBehaviour
             StartCoroutine(ExampleCoroutine());
 
         } else {
+
             isAttacking = false;
         }
 
