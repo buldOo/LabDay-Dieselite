@@ -302,7 +302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -269.7, y: 21.5}
+  m_AnchoredPosition: {x: -265, y: 50}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8734524
@@ -57383,6 +57383,7 @@ MonoBehaviour:
   BulletSpeed: 1000
   ShootPoint: {fileID: 420227330}
   FireRate: 1
+  timeBeforeDestroy: 0
 --- !u!50 &768024681
 Rigidbody2D:
   serializedVersion: 4
@@ -61246,7 +61247,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545732409}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.09, y: 0.58, z: 0}
+  m_LocalPosition: {x: 0.052, y: 0.924, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 980904417}
@@ -61312,6 +61313,7 @@ MonoBehaviour:
   BulletSpeed: 1000
   ShootPoint: {fileID: 1163464099}
   FireRate: 1
+  timeBeforeDestroy: 0
 --- !u!4 &1558444938
 Transform:
   m_ObjectHideFlags: 0
@@ -61414,7 +61416,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 322.8, y: -31.9}
+  m_AnchoredPosition: {x: 315, y: -59}
   m_SizeDelta: {x: 105.37, y: 23.341}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1715470217
@@ -61736,8 +61738,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -138}
-  m_SizeDelta: {x: -77.03, y: -305.49}
+  m_AnchoredPosition: {x: 0.0012512207, y: -162.69751}
+  m_SizeDelta: {x: -90.00249, y: -374.605}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2126762857
 MonoBehaviour:
