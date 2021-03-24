@@ -5282,7 +5282,7 @@ GameObject:
   - component: {fileID: 108833791}
   - component: {fileID: 108833790}
   - component: {fileID: 108833792}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PNJ Naked
   m_TagString: PNJ Naked
   m_Icon: {fileID: 0}
@@ -5887,7 +5887,7 @@ GameObject:
   m_Component:
   - component: {fileID: 597147968}
   - component: {fileID: 597147971}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: NPC_test_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58169,7 +58169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 997366957}
   - component: {fileID: 997366958}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: character_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61569,7 +61569,7 @@ GameObject:
   - component: {fileID: 2013900561}
   - component: {fileID: 2013900565}
   - component: {fileID: 2013900564}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PNJ En Danger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
