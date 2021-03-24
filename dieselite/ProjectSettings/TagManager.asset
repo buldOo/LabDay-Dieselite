@@ -8,6 +8,7 @@ TagManager:
   - ShootPoint
   - Bullet
   - playerBullet
+  - PNJ Naked
   layers:
   - Default
   - TransparentFX
