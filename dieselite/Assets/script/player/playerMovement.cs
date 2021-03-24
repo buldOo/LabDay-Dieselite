@@ -8,6 +8,7 @@ public class playerMovement : MonoBehaviour
     public GameObject crosshair;
     public LayerMask SolidObjectsLayer;
     public LayerMask InteracteblaLayer;
+
     public AudioClip runningSounds;
 
     private bool isMoving;
