@@ -12,11 +12,19 @@ public class DisableRooftop : MonoBehaviour
     private TilemapCollider2D tilemapCollider2D;
     private Vector2 input;
 
+    public float zoomSpeed = 0.00001f;
+    public float targetOrtho;
+    public float smoothSpeed = 0.01f;
+    public float minOrtho = 1.0f;
+    public float maxOrtho = 20.0f;
+
     // Start is called before the first frame update
     void Start()
     {
         rooftop = tilemap.GetComponent<TilemapRenderer>();
         tilemapCollider2D = tilemap.GetComponent<TilemapCollider2D>();
+
+        this.targetOrtho = Camera.main.orthographicSize;
     }
 
     // Update is called once per frame
@@ -33,7 +41,15 @@ public class DisableRooftop : MonoBehaviour
         {
             rooftop.enabled = false;
 
-        } else {
+            this.targetOrtho -= this.zoomSpeed;
+            this.targetOrtho = Mathf.Clamp(this.targetOrtho, this.minOrtho, this.maxOrtho);
+            Camera.main.orthographicSize = Mathf.MoveTowards(
+            Camera.main.orthographicSize,
+            this.targetOrtho,
+            this.smoothSpeed * Time.deltaTime);
+
+        }
+        else {
 
             rooftop.enabled = true;
         }
