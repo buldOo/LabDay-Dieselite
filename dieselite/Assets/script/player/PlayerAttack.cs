@@ -10,12 +10,12 @@ public class PlayerAttack : MonoBehaviour
     public Transform ShootPoint;
     public float BulletSpeed;
     public float FireRate;
+    public float timeBeforeDestroy;
 
     private AudioSource Audio_attack;
-
     private Animator animator;
     private bool isAttacking;
-    public float timeBeforeDestroy;
+
 
     float ReadyForNextShot;
 
@@ -37,7 +37,7 @@ public class PlayerAttack : MonoBehaviour
         animator.SetBool("isAttacking", isAttacking);
 
         //Press the left click to tell the Animator to trigger the Jump Animation
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0) && animator.GetInteger("WeaponEquiped") == 1)
         {
             isAttacking = true;
             StartCoroutine(ExampleCoroutine());
