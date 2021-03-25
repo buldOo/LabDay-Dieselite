@@ -27,6 +27,7 @@ public class Inventory : MonoBehaviour
         PlayerHealth.instance.HealPlayer(currentItem.hpGiven);
         content.Remove(currentItem);
         GetNexItem();
+        UpdateIventoryUI();
     }
 
     // next item
