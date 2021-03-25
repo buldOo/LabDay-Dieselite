@@ -57753,8 +57753,8 @@ MonoBehaviour:
   Bullet: {fileID: 394182463129986239, guid: ac6de71816aed48f8b107e75ba36026a, type: 3}
   BulletSpeed: 1000
   ShootPoint: {fileID: 420227330}
-  FireRate: 1
-  timeBeforeDestroy: 0
+  FireRate: 3
+  timeBeforeDestroy: 1
 --- !u!50 &768024681
 Rigidbody2D:
   serializedVersion: 4
@@ -61868,8 +61868,8 @@ MonoBehaviour:
   Bullet: {fileID: 394182463129986239, guid: ac6de71816aed48f8b107e75ba36026a, type: 3}
   BulletSpeed: 1000
   ShootPoint: {fileID: 1163464099}
-  FireRate: 1
-  timeBeforeDestroy: 0
+  FireRate: 1.5
+  timeBeforeDestroy: 1
 --- !u!4 &1558444938
 Transform:
   m_ObjectHideFlags: 0
