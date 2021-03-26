@@ -12,6 +12,7 @@ public class Death : MonoBehaviour
     private bool isDead;
 
     public GameObject parent;
+    public GameObject Exp;
 
 
     // Start is called before the first frame update
@@ -33,6 +34,8 @@ public class Death : MonoBehaviour
         if (currentHealth <= 0)
         {
             StartCoroutine(ExampleCoroutine());
+            Exp.GetComponent<GiveExpToPlayer>().enabled = true;
+            Exp.SetActive(true);
         }
     }
 
