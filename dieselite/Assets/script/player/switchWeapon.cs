@@ -7,6 +7,8 @@ public class switchWeapon : MonoBehaviour
     private Animator animator;
     private int WeaponEquiped;
 
+    public int maxWeapon;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -23,12 +25,12 @@ public class switchWeapon : MonoBehaviour
     {
         animator.SetInteger("WeaponEquiped", WeaponEquiped);
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) && WeaponEquiped < maxWeapon)
         {
             WeaponEquiped += 1;
             Debug.Log(WeaponEquiped);
 
-        } else if (Input.GetKeyDown(KeyCode.R)) {
+        } else if (Input.GetKeyDown(KeyCode.R) && WeaponEquiped > 0) {
             WeaponEquiped -= 1;
             Debug.Log(WeaponEquiped);
         }

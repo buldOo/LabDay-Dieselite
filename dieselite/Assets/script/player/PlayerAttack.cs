@@ -8,12 +8,14 @@ public class PlayerAttack : MonoBehaviour
     public AudioClip attackSounds;
     public GameObject Bullet;
     public Transform ShootPoint;
+    public LayerMask enemy;
     public float BulletSpeed;
     public float FireRate;
     public float timeBeforeDestroy;
 
     private AudioSource Audio_attack;
     private Animator animator;
+    private Vector2 input;
     private bool isAttacking;
     private bool isPunching;
 
@@ -38,13 +40,14 @@ public class PlayerAttack : MonoBehaviour
         animator.SetBool("isAttacking", isAttacking);
         animator.SetBool("isPunching", isPunching);
 
+
         //Press the left click to tell the Animator to trigger the Jump Animation
         if (Input.GetKey(KeyCode.Mouse0) && animator.GetInteger("WeaponEquiped") == 1)
         {
             isAttacking = true;
             StartCoroutine(ExampleCoroutine(1));
 
-        } else if (Input.GetKey(KeyCode.Mouse0) && animator.GetInteger("WeaponEquiped") == 0) {
+        } else if (Input.GetKeyDown(KeyCode.Mouse0) && animator.GetInteger("WeaponEquiped") == 0) {
             isPunching = true;
             StartCoroutine(ExampleCoroutine(0));
 
@@ -79,6 +82,5 @@ public class PlayerAttack : MonoBehaviour
         }
 
     }
-
 
 }
