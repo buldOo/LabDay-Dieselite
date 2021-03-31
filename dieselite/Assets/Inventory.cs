@@ -9,10 +9,22 @@ public class Inventory : MonoBehaviour
     public Image itemIUImage;
     public Sprite emptyItemImage;
 
+    public static Inventory instance;
+
+    private void Awake()
+    {
+        if(instance != null)
+        {
+            Debug.LogWarning("il y a plus d'une instance de Inventory dans la scène");
+            return;
+        }
+        instance = this;
+    }
+
     // update inventory
     private void Start()
     {
-        UpdateIventoryUI();
+        UpdateInventoryUI();
     }
 
     // item consumption
@@ -27,7 +39,7 @@ public class Inventory : MonoBehaviour
         PlayerHealth.instance.HealPlayer(currentItem.hpGiven);
         content.Remove(currentItem);
         GetNexItem();
-        UpdateIventoryUI();
+        UpdateInventoryUI();
     }
 
     // next item
@@ -43,7 +55,7 @@ public class Inventory : MonoBehaviour
         {
             contentCurrentIndex = 0;
         }
-        UpdateIventoryUI();
+        UpdateInventoryUI();
     }
 
     // previous item
@@ -59,10 +71,10 @@ public class Inventory : MonoBehaviour
         {
             contentCurrentIndex = content.Count - 1;
         }
-        UpdateIventoryUI();
+        UpdateInventoryUI();
     }
 
-    public void UpdateIventoryUI()
+    public void UpdateInventoryUI()
     {
         if(content.Count > 0)
         {
