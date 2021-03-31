@@ -9,10 +9,7 @@ public class PickUpItem : MonoBehaviour
     public Item item;
     public AudioClip soundToPlay;
 
-    void Awake()
-    {
-        interactUI = GameObject.FindGameObjectWithTag("InteractUI").GetComponent<Text>();
-    }
+    
 
     void Update()
     {
@@ -26,7 +23,6 @@ public class PickUpItem : MonoBehaviour
     {
         Inventory.instance.content.Add(item);
         Inventory.instance.UpdateInventoryUI();
-        interactUI.enabled = false;
         Destroy(gameObject);
     }
 
@@ -35,7 +31,6 @@ public class PickUpItem : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Debug.Log("colision on");
-            interactUI.enabled = true;
             isInRange = true;
         }
     }
@@ -45,7 +40,6 @@ public class PickUpItem : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Debug.Log("colision off");
-            interactUI.enabled = false;
             isInRange = false;
         }
     }
