@@ -8,6 +8,8 @@ public class playerMovement : MonoBehaviour
     public GameObject crosshair;
     public LayerMask SolidObjectsLayer;
     public LayerMask InteracteblaLayer;
+    public LayerMask crate;
+
 
     public AudioClip runningSounds;
 
@@ -74,7 +76,7 @@ public class playerMovement : MonoBehaviour
 
     private bool IsWalkable(Vector3 targetPos)
     {
-        if (Physics2D.OverlapCircle(targetPos, 0.3f, SolidObjectsLayer | InteracteblaLayer) != null)
+        if (Physics2D.OverlapCircle(targetPos, 0.3f, SolidObjectsLayer | InteracteblaLayer | crate) != null)
         {
             return false;
         }
