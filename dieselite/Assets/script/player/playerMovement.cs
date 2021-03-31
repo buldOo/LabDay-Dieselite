@@ -22,7 +22,6 @@ public class playerMovement : MonoBehaviour
     private void Start()
     {
         Debug.Log("start");
-        Cursor.visible = false;
         theCam = Camera.main;
     }
 
@@ -34,7 +33,9 @@ public class playerMovement : MonoBehaviour
 
     private void Update()
     {
-        if(!isMoving)
+        Cursor.visible = false;
+
+        if (!isMoving)
         {
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");

@@ -13,6 +13,7 @@ public class Death : MonoBehaviour
 
     public GameObject parent;
     public GameObject Exp;
+    public GameObject coins;
 
 
     // Start is called before the first frame update
@@ -50,16 +51,16 @@ public class Death : MonoBehaviour
         {
             Destroy(collision.gameObject);
             TakeDamage(34);
-            Debug.Log("toucher");
         }
     }
 
     IEnumerator ExampleCoroutine()
     {
-        Debug.Log("dead");
         parent.GetComponent<ScriptEnnemy>().enabled = false;
         isDead = true;
         yield return new WaitForSeconds(0.90F);
+        coins.SetActive(true);
+
         Destroy(gameObject);
     }
 }
