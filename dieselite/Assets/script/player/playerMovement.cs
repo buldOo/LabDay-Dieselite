@@ -8,6 +8,8 @@ public class playerMovement : MonoBehaviour
     public GameObject crosshair;
     public LayerMask SolidObjectsLayer;
     public LayerMask InteracteblaLayer;
+    public LayerMask crate;
+
 
     public AudioClip runningSounds;
 
@@ -20,7 +22,6 @@ public class playerMovement : MonoBehaviour
     private void Start()
     {
         Debug.Log("start");
-        Cursor.visible = false;
         theCam = Camera.main;
     }
 
@@ -32,7 +33,9 @@ public class playerMovement : MonoBehaviour
 
     private void Update()
     {
-        if(!isMoving)
+        Cursor.visible = false;
+
+        if (!isMoving)
         {
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
@@ -74,7 +77,7 @@ public class playerMovement : MonoBehaviour
 
     private bool IsWalkable(Vector3 targetPos)
     {
-        if (Physics2D.OverlapCircle(targetPos, 0.3f, SolidObjectsLayer | InteracteblaLayer) != null)
+        if (Physics2D.OverlapCircle(targetPos, 0.3f, SolidObjectsLayer | InteracteblaLayer | crate) != null)
         {
             return false;
         }

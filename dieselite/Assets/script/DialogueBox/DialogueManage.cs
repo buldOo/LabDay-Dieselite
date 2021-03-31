@@ -28,6 +28,7 @@ public class DialogueManage : MonoBehaviour
 
     public void startDialogue(Dialogue dialogue){
 
+        Cursor.visible = true;
         player.GetComponent<playerMovement>().enabled = false;
         player.GetComponent<PlayerAttack>().enabled = false;
         player.GetComponent<Animator>().enabled = false;
@@ -65,6 +66,7 @@ public class DialogueManage : MonoBehaviour
     }
 
     void EndDialogue(){
+        Cursor.visible = false;
         animator.SetBool("IsOpen", false);
         player.GetComponent<playerMovement>().enabled = true;
         player.GetComponent<PlayerAttack>().enabled = true;

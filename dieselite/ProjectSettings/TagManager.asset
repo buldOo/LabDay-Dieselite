@@ -16,14 +16,14 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - player
   - Water
   - UI
   - SolidObjects
   - interactable
   - rooftop
   - bullet
-  - 
+  - Crate
   - 
   - 
   - 
@@ -54,6 +54,12 @@ TagManager:
     locked: 0
   - name: foreGround
     uniqueID: 2451989521
+    locked: 0
+  - name: object
+    uniqueID: 1407422485
+    locked: 0
+  - name: enemy
+    uniqueID: 3531858771
     locked: 0
   - name: player
     uniqueID: 3559106459
