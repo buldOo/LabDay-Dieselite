@@ -59311,6 +59311,7 @@ GameObject:
   - component: {fileID: 1162429645}
   - component: {fileID: 1162429644}
   - component: {fileID: 1162429643}
+  - component: {fileID: 1162429647}
   m_Layer: 0
   m_Name: CrateObject
   m_TagString: Untagged
@@ -59384,6 +59385,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1162429647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162429642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ef2ca452b194824a449019e94a2ad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: 
+    sentences:
+    - Vous avez trouvez une armer !
+    - vous pouvez appuyez sur "A" et "R" pour changer d'arme.
+  isInRange: 0
 --- !u!1 &1163464098
 GameObject:
   m_ObjectHideFlags: 0
