@@ -12,7 +12,6 @@ public class Death : MonoBehaviour
     private bool isDead;
 
     public GameObject parent;
-    public GameObject Exp;
     public GameObject coins;
 
 
@@ -35,8 +34,6 @@ public class Death : MonoBehaviour
         if (currentHealth <= 0)
         {
             StartCoroutine(ExampleCoroutine());
-            Exp.GetComponent<GiveExpToPlayer>().enabled = true;
-            Exp.SetActive(true);
         }
     }
 
@@ -55,12 +52,14 @@ public class Death : MonoBehaviour
     }
 
     IEnumerator ExampleCoroutine()
-    {
+    {   
         parent.GetComponent<ScriptEnnemy>().enabled = false;
         isDead = true;
+        GameObject.Find("ExpBar").GetComponent<EXP>().updateExp += 35 * Time.deltaTime;
         yield return new WaitForSeconds(0.90F);
         coins.SetActive(true);
 
         Destroy(gameObject);
+
     }
 }
