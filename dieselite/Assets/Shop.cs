@@ -15,4 +15,9 @@ public class Shop : MonoBehaviour
         player.GetComponent<Animator>().enabled = true;
         shop.SetActive(false);
     }
+
+    public void buy()
+    {
+            
+    }
 }

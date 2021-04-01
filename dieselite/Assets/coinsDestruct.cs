@@ -19,7 +19,7 @@ public class coinsDestruct : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            GameObject.Find("player").GetComponent<playerCoins>().Coins =+ Random.Range(1, 5); ;
+            GameObject.Find("player").GetComponent<playerCoins>().Coins += Random.Range(5, 5); ;
             Destroy(gameObject);
         }
     }
