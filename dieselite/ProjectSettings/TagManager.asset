@@ -52,6 +52,9 @@ TagManager:
   - name: Background
     uniqueID: 4219314109
     locked: 0
+  - name: QuestFinish
+    uniqueID: 1182665375
+    locked: 0
   - name: foreGround
     uniqueID: 2451989521
     locked: 0
