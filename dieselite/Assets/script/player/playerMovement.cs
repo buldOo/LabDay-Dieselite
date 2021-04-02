@@ -21,7 +21,6 @@ public class playerMovement : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("start");
         theCam = Camera.main;
     }
 
