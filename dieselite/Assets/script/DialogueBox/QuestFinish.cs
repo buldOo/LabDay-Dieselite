@@ -2,15 +2,18 @@ using UnityEngine;
 
 public class QuestFinish : MonoBehaviour
 {
-
+    public GameObject dialogueTrigger;
     public Dialogue dialogue;
-
     public bool isInRange;
 
     void Update()
     {
-        if(isInRange && Input.GetKeyDown(KeyCode.E)){
-            TriggerDialogue();
+        if (GameObject.Find("EnemyDetector").GetComponent<EnemyDetector>().isEnemyHere == false)
+        {
+            dialogueTrigger.GetComponent<DialogueTrigger>().enabled = false;
+            if (isInRange && Input.GetKeyDown(KeyCode.E)){
+                TriggerDialogue();
+            }
         }
     }
 

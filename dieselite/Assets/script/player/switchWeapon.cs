@@ -28,11 +28,9 @@ public class switchWeapon : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A) && WeaponEquiped < maxWeapon)
         {
             WeaponEquiped += 1;
-            Debug.Log(WeaponEquiped);
 
         } else if (Input.GetKeyDown(KeyCode.R) && WeaponEquiped > 0) {
             WeaponEquiped -= 1;
-            Debug.Log(WeaponEquiped);
         }
     }
 }
